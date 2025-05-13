@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #EEEEEE;
+}
+
+header h2{
+    font-size: 36px;
+    font-weight: 600;
+    position: absolute;
+    top: 40px;
+    left: 750px;
+}
+
+#reta{
+    position: absolute;
+    top: 120px;
+    background-color: #D9D9D9;
+    width: 1905px;
+    height: 3px;
+}
+
+#logo{
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    left: 0px;
+}
+
+#imagem_dicas{
+    position: absolute;
+    bottom: -100px;
+    width: 922px;
+    height: 896px;
+}
+
+.banner p{
+    position: absolute;
+    right: 0px;
+}
