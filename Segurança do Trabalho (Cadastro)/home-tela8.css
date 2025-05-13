@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-color: #EEEEEE;
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+header{
+    background-color: #008000;
+    height: 20px;
+    width: 1920px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.banner1{
+    background-color: #FFFFFF;
+    width: 730px;
+    max-width: 730px;
+    max-height: 683px;
+    height: 683px;
+    border-radius: 25px;
+    position: absolute;
+    top: 155px;
+    left: 240px;
+}
+
+.banner1 h1{
+    font-size: 36px;
+    color: #008000;
+    font-weight: 400;
+    position: absolute;
+    top: 35px;
+    left: 130px;
+}
+
+.banner1 p{
+    font-size: 30px;
+    color: #FFA63D;
+    font-weight: 400;
+    position: absolute;
+    top: 98px;
+    left: 215px;
+    
+}
+
+#logo{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 469px;
+    position: relative;
+    top: 140px;
+    left: 60px;
+}
+
+input[type=text]{
+    background-color: #D9D9D9;
+    font-size: 24px;
+    padding: 10px;
+    padding-left: 60px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+input[type=email]{
+    background-color: #D9D9D9;
+    font-size: 24px;
+    padding: 10px;
+    padding-left: 60px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+input[type=password]{
+    background-color: #D9D9D9;
+    font-size: 24px;
+    padding: 10px;
+    padding-left: 60px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+input[type=checkbox]{
+    position: absolute;
+    height: 18px;
+    width: 17px;
+    left: 0px;
+    bottom: -60px;
+    text-align: center;
+}
+
+label{
+    font-weight: 600;
+    color: #7E7777;
+    position: absolute;
+    font-size: 13px;
+    text-align: left;
+    left: 25px;
+    bottom: -68px;
+}
+
+#entrar{
+    position: absolute;
+    bottom: -150px;
+    left: 140px;
+    width: 174px;
+    height: 40px;
+    background-color: #ff962c;
+    color: #007f14;
+    border: none;
+    border-radius: 8px;
+}
+
+#entrar:hover{
+    transition: all 0.3s ease-out;
+    background-color: #007f14;
+    color: #ff962c;
+    cursor: pointer;
+}
+
+#usuario_icone1{
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+#usuario_icone2{
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    top: 90px;
+    left: 15px;
+}
+
+#email_icone{
+    width: 34px;
+    height: 33px;
+    position: absolute;
+    top: 166px;
+    left: 11px;
+}
+
+#cadeado_icone{
+    width: 28px;
+    height: 29px;
+    position: absolute;
+    bottom: 11px;
+    left: 13px;
+}
+
+#acessibilidade{
+    width: 80.4px;
+    height: 67px;
+    position: absolute;
+    top: 350px;
+    right: 0px;
+}
+
+.banner2{
+    background-color: #008000;
+    width: 715px;
+    max-width: 715px;
+    max-height: 683px;
+    height: 683px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    position: absolute;
+    top: 155px;
+    right: 250px;
+}
+
+.banner2 h1{
+    font-size: 48px;
+    font-weight: 800;
+    position: absolute;
+    top: 80px;
+    left: 236px;
+    color: #FFFFFF;
+}
+
+#seguranca{
+    justify-items: center;
+    margin-top: 200px;
+}
+
+#seta_icone{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: -245px;
+}
+
+#seta_icone:hover{
+    cursor: pointer;
+}
