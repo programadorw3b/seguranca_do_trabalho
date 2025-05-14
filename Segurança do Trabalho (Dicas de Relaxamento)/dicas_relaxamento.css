@@ -41,7 +41,20 @@ header h2{
     height: 896px;
 }
 
-.banner p{
+.banner{
+    background-color: #008000;
+    width: 602px;
+    max-width: 602px;
+    max-height: 786px;
+    height: 786px;
     position: absolute;
-    right: 0px;
+    top: 155px;
+    right: 250px;
+}
+
+.banner p{
+    background-color: none;
+    text-align: left;
+    position: absolute;
+    top: 0px;
 }
