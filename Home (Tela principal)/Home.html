@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mindconnect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="Home.css">
+</head>
+
+<body>
+  <div class="faixa-topo"></div>
+
+  <header>
+    <div class="logo">
+      <img src="IMG/LOGO.png" alt="Logo Mindconnect" />
+    </div>
+
+    <!-- Ícone do menu mobile -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="Registrar-sentimentos.html">Registrar Sentimentos</a></li>
+        <li><a href="Dicas-de-relaxamento.html">Dicas de Relaxamento</a></li>
+        <li><a href="Agendar-consulta.html">Agendar consulta</a></li>
+      </ul>
+    </nav>
+
+    <div class="acoes-header">
+      <button class="btn-destaque">Trilha do Bem Estar</button>
+      <a href="login.html" class="login-icon"><i class="fas fa-user-circle"></i></a>
+    </div>
+  </header>
+
+  <!-- SLIDER -->
+  <div class="slider">
+    <div class="slides">
+      <div class="slide active"><img src="IMG/segurançacapacete.jpg" alt="Slide 1"></div>
+      <div class="slide"><img src="IMG/Capa trabalho banner 2.jpg" alt="Slide 2"></div>
+      <div class="slide"><img src="IMG/pexels-segurança1.jpg" alt="Slide 3"></div>
+    </div>
+
+    <div class="dots">
+      <span class="dot active" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+  </div>
+
+  <main>
+    <section class="servicos">
+      <a href="Normas e Regulamentos.html" class="box-link">
+        <div class="box">
+          <p class="titulo-box">Normas e Regulamentos</p>
+          <i class="fas fa-heartbeat fa-4x icone-box"></i>
+        </div>
+      </a>
+
+      <a href="Recomendacao psicologica.html" class="box-link">
+        <div class="box">
+          <p class="titulo-box">Apoio Psicológico</p>
+          <i class="fas fa-brain fa-4x icone-box"></i>
+        </div>
+      </a>
+
+      <a href="Denuncias.html" class="box-link">
+        <div class="box">
+          <p class="titulo-box">Denúncias e Sugestões</p>
+          <i class="fas fa-exclamation-triangle fa-4x icone-box"></i>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mindconnect. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- VLibras Plugin -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <script>
+    // Slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+    let interval = null;
+
+    function showSlide(index) {
+      if (index >= slides.length) slideIndex = 0;
+      else if (index < 0) slideIndex = slides.length - 1;
+      else slideIndex = index;
+
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        dots[i].classList.remove("active");
+      });
+
+      slides[slideIndex].classList.add("active");
+      dots[slideIndex].classList.add("active");
+    }
+
+    function nextSlide() {
+      showSlide(++slideIndex);
+    }
+
+    function startAutoSlide() {
+      interval = setInterval(nextSlide, 8000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(interval);
+    }
+
+    function currentSlide(n) {
+      stopAutoSlide();
+      showSlide(n);
+      startAutoSlide();
+    }
+
+    startAutoSlide();
+
+    // Menu mobile
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
