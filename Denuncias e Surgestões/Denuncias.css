@@ -1,6 +1,3 @@
-/* ========================= */
-/*      VARIÁVEIS DE COR     */
-/* ========================= */
 :root {
   --verde-principal: #006400;
   --laranja-destaque: #FFA500;
@@ -8,9 +5,6 @@
   --cinza-claro: #d1d1d1;
 }
 
-/* ========================= */
-/*         RESET             */
-/* ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -28,22 +22,27 @@ body {
   background-color: var(--cinza-claro);
 }
 
-/* ========================= */
-/*       CABEÇALHO           */
-/* ========================= */
+/* Barra verde no topo */
 .faixa-topo {
   height: 15px;
   background-color: var(--verde-principal);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
+/* Cabeçalho */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--branco);
-  padding: 15px 20px;
+  padding: 30px 20px 15px; /* adiciona espaço para a faixa fixa */
   flex-wrap: wrap;
   position: relative;
+  margin-top: 15px; /* evita sobreposição da faixa */
 }
 
 .logo img {
@@ -98,166 +97,13 @@ nav ul li a:hover {
   color: var(--verde-principal);
 }
 
-/* ========================= */
-/*         SLIDER            */
-/* ========================= */
-.slider {
-  position: relative;
-  width: 100%;
-  height: 350px;
-  overflow: hidden;
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.1s ease;
-}
-
-.slide {
-  min-width: 100%;
-  display: none;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.dots {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-}
-
-.dot {
-  height: 12px;
-  width: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.dot.active {
-  background: #fff;
-}
-
-/* ========================= */
-/*       SERVIÇOS            */
-/* ========================= */
-main {
-  padding: 250px 40px;
-  text-align: center;
-  flex: 1;
-}
-
-.servicos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.box {
-  background: var(--verde-principal);
-  color: white;
-  border-radius: 20px;
-  padding: 100px 50px;
-  width: 300px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.box:hover {
-  transform: translateY(-5px);
-}
-
-.titulo-box {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.icone-box {
-  color: var(--laranja-destaque);
-  margin-bottom: 10px;
-}
-
-.box-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ========================= */
-/*        RODAPÉ             */
-/* ========================= */
-footer {
-  background: var(--verde-principal);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-/* ========================= */
-/*     ÁREA DE LOGIN         */
-/* ========================= */
-.menu-login {
-  display: none;
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ccc;
-  right: 10px;
-  top: 50px;
-  z-index: 10;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.menu-login button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-}
-
-.menu-login button:hover {
-  background-color: #f0f0f0;
-}
-
-.aba {
-  display: none;
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background: #f5ebeb;
-}
-
-.aba.visible {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
-/* ========================= */
-/*    FORMULÁRIO DE LOGIN    */
-/* ========================= */
+/* Conteúdo principal */
 .conteudo-principal {
   padding: 40px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
+  flex: 1;
 }
 
 .box-form {
@@ -327,9 +173,47 @@ footer {
   background-color: #e69500;
 }
 
-/* ========================= */
-/*     RESPONSIVIDADE        */
-/* ========================= */
+/* Página de Normas e Regulamentos */
+.regulamento-container {
+  max-width: 1000px;
+  margin: 100px auto 40px;
+  background: var(--branco);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.regulamento-container h1 {
+  color: var(--verde-principal);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.regulamento-container h2 {
+  color: var(--verde-principal);
+  font-size: 20px;
+  margin-top: 60px;
+}
+
+.regulamento-container p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+/* Rodapé */
+footer {
+  background: var(--verde-principal);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   nav ul {
     display: none;
@@ -340,7 +224,7 @@ footer {
     top: 100%;
     left: 0;
     padding: 10px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
 
   nav ul.show {
@@ -357,12 +241,12 @@ footer {
     justify-content: flex-end;
   }
 
-  .slider {
-    height: 250px;
+  .box-form {
+    padding: 30px 20px;
   }
 
-  .box {
-    width: 90%;
-    padding: 30px 10px;
+  .regulamento-container {
+    padding: 30px 20px;
+    margin: 60px 10px;
   }
 }
