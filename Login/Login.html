@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - MindConnect</title>
+  <link rel="stylesheet" href="Login.css">
+
+  <!-- VLibras -->
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</head>
+<body>
+  <!-- Container do VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <div class="faixa-verde"></div>
+
+  <div class="container">
+    <div class="login-box">
+      <div class="logo">
+        <img src="IMG/LOGOPNG.png" alt="Logo MindConnect" />
+        <h1>MINDCONNECT</h1>
+        <span>Login</span>
+      </div>
+
+      <form>
+        <input type="text" placeholder="Login" class="input" aria-label="Digite seu login">
+        <input type="password" placeholder="Senha" class="input" aria-label="Digite sua senha">
+
+        <div class="captcha">
+          <input type="checkbox" id="captcha">
+          <label for="captcha">Não sou um robô</label>
+          <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
+        </div>
+
+        <a href="#" class="cadastre">Cadastre-se</a>
+        <button type="submit" class="btn-entrar">Entrar</button>
+        <a href="#" class="esqueceu">Esqueceu a senha?</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
