@@ -1,31 +1,34 @@
-/* Variáveis de cores para fácil manutenção */
 :root {
-  --verde-principal: #006400; /* Cor principal */
-  --laranja-destaque: #FFA500; /* Cor de destaque */
-  --branco: white; /* Cor de fundo */
-  --cinza-claro: #d1d1d1; /* Cor de fundo clara */
+  --verde-principal: #006400;
+  --laranja-destaque: #FFA500;
+  --branco: white;
+  --cinza-claro: #d1d1d1;
 }
 
-/* Resetando margin, padding e box-sizing para todos os elementos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilo do body com fundo claro */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--cinza-claro);
 }
 
-/* Faixa superior com cor verde */
+/* Barra verde no topo */
 .faixa-topo {
   height: 15px;
   background-color: var(--verde-principal);
 }
 
-/* Estilos para o header com navegação e botões */
+/* Cabeçalho */
 header {
   display: flex;
   justify-content: space-between;
@@ -36,12 +39,10 @@ header {
   position: relative;
 }
 
-/* Estilo da logo */
 .logo img {
   height: 100px;
 }
 
-/* Estilo do menu de navegação */
 nav ul {
   list-style: none;
   display: flex;
@@ -54,19 +55,16 @@ nav ul li a {
   font-weight: bold;
 }
 
-/* Efeito de hover no menu */
 nav ul li a:hover {
   color: var(--laranja-destaque);
 }
 
-/* Estilos para ações do header */
 .acoes-header {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Botão de destaque com fundo laranja */
 .btn-destaque {
   background: var(--laranja-destaque);
   color: var(--verde-principal);
@@ -77,18 +75,15 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
-/* Efeito de hover no botão */
 .btn-destaque:hover {
   background: #e69500;
 }
 
-/* Ícone de login */
 .login-icon {
   font-size: 28px;
   color: var(--verde-principal);
 }
 
-/* Estilo do menu toggle (responsivo) */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -96,51 +91,83 @@ nav ul li a:hover {
   color: var(--verde-principal);
 }
 
-.slides {
+/* Conteúdo principal (ex: formulário de denúncias ou normas) */
+.conteudo-principal {
+  padding: 40px 20px;
   display: flex;
-  transition: transform 0.5s ease;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
-/* Estilos para cada slide */
-.slide {
-  min-width: 100%;
-  display: none;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide img {
+.box-form {
+  background-color: var(--branco);
+  padding: 40px;
+  max-width: 600px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Controle de pontos para navegação no slider */
-.dots {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.dot {
-  height: 12px;
-  width: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 5px;
+.box-form h1 {
+  font-size: 26px;
+  color: var(--verde-principal);
+  margin-bottom: 10px;
+}
+
+.box-form p {
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: #333;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario label {
+  text-align: left;
+  font-weight: bold;
+  color: var(--verde-principal);
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+  outline: none;
+  border-color: var(--verde-principal);
+}
+
+.formulario button {
+  background-color: var(--laranja-destaque);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* Quando o ponto está ativo */
-.dot.active {
-  background: #fff;
+.formulario button:hover {
+  background-color: #e69500;
 }
 
-/* Estilos para a página de Normas e Regulamentos */
+/* Página de Normas e Regulamentos */
 .regulamento-container {
   max-width: 1000px;
   margin: 100px auto 40px;
@@ -171,7 +198,7 @@ nav ul li a:hover {
   margin-top: 8px;
 }
 
-/* Estilos do rodapé */
+/* Rodapé */
 footer {
   background: var(--verde-principal);
   color: white;
@@ -180,35 +207,40 @@ footer {
   margin-top: 40px;
 }
 
-/* Responsividade: ajustes para telas pequenas */
+/* Responsividade */
 @media (max-width: 768px) {
   nav ul {
-      display: none;
-      flex-direction: column;
-      background: var(--branco);
-      width: 100%;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      padding: 10px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    background: var(--branco);
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
 
   nav ul.show {
-      display: flex;
+    display: flex;
   }
 
   .menu-toggle {
-      display: block;
+    display: block;
   }
 
   .acoes-header {
-      margin-top: 10px;
-      width: 100%;
-      justify-content: flex-end;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end;
   }
 
-  .slider {
-      height: 250px;
+  .box-form {
+    padding: 30px 20px;
+  }
+
+  .regulamento-container {
+    padding: 30px 20px;
+    margin: 60px 10px;
   }
 }
