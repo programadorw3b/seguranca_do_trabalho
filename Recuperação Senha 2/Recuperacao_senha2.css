@@ -117,7 +117,7 @@ body{
     position: absolute;
     justify-content: center;  
     align-items: center;      
-    margin-top: 365px;
+    margin-top: 366px;
     margin-left: 810px;
     width: 330px;
   
@@ -138,7 +138,7 @@ input::placeholder {
     border-radius: 9%;
     cursor: pointer;
     position: absolute;
-    margin-top: 520px;
+    margin-top: 570px;
     margin-left: 870px;
 }
 
@@ -151,7 +151,7 @@ input::placeholder {
 
 #passwordicon{
     position: absolute;
-    margin-top: 360px;
+    margin-top: 359px;
     margin-left: 773px;
     height: 29px;
 }
@@ -162,7 +162,7 @@ input::placeholder {
     position: absolute;
     justify-content: center;  
     align-items: center;      
-    margin-top: 465px;
+    margin-top: 468px;
     margin-left: 810px;
     width: 330px;
 }

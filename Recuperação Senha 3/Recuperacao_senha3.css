@@ -96,55 +96,6 @@ body{
     left: 40%;
 }
 
-.requisitos{
-    position: absolute;
-}
-
-#email{
-    all: unset;
-    color: rgb(0, 0, 0);
-    position: absolute;
-    justify-content: center;  
-    align-items: center;      
-    margin-top: 420px;
-    margin-left: 810px;
-    width: 330px;
-  
-}
-
-input::placeholder {
-    color: grey;
-    font-size: 18px;
-  }
-  
-#enviar{
-    background-color: orange;
-    border: none;
-    width: 174px;
-    height: 40px;
-    color: green;
-    font-size: 20px;
-    border-radius: 6%;
-    cursor: pointer;
-    position: absolute;
-    margin-top: 520px;
-    margin-left: 870px;
-}
-
-#enviar:hover {
-    transition: all 0.3s ease-out;
-    background-color: #007f14;
-    color: #ff962c;
-    cursor: pointer;     
-}
-
-#emailicon{
-    position: absolute;
-    margin-top: 415px;
-    margin-left: 775px;
-    height: 30px;
-}
-
 #altered{
     position: absolute;
     font-size: 1.5rem;
