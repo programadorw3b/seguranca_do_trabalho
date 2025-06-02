@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #ffffff;
+    color: #000;
+  }
+  
+  header {
+    background-color: #0a8f2f;
+    padding: 10px;
+    color: white;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .user-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  h1 {
+    font-size: 18px;
+    flex-grow: 1;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+  }
+  
+  .mensagem-sucesso {
+    background-color: #ffe7c2;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .botao-voltar button {
+    background-color: #b3d8b3;
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .botao-voltar button:hover {
+    background-color: #9fc9a5;
+  }
+  

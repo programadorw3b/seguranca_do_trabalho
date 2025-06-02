@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Consultas Agendadas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Lado esquerdo - Calendário */
+    .sidebar {
+      width: 250px;
+      background-color: #ffffff;
+      border-right: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    .calendar {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .calendar table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .calendar th, .calendar td {
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 8px;
+    }
+
+    .calendar th {
+      background-color: #f2f2f2;
+    }
+
+    .dia-atual {
+      font-weight: bold;
+      color: red;
+    }
+
+    /* Conteúdo principal */
+    .main {
+      flex-grow: 1;
+      padding: 30px;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .header h2 {
+      color: #ff7f00;
+      margin-bottom: 10px;
+    }
+
+    .data-atual {
+      background-color: #e0e0e0;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .horarios {
+      margin-top: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .hora {
+      padding: 15px 20px;
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hora:hover {
+      background-color: #d7eaff;
+    }
+
+    .hora.agendado {
+      background-color: #a7d6ff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Calendário -->
+    <div class="sidebar">
+      <div class="calendar" id="calendar"></div>
+    </div>
+
+    <!-- Parte Principal -->
+    <div class="main">
+      <div class="header">
+        <h2>Consultas Agendadas</h2>
+        <div class="data-atual" id="dataAtual"></div>
+      </div>
+
+      <div class="horarios" id="listaHorarios">
+        <!-- Horários de 14h às 22h -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Gera o calendário de um mês
+    function gerarCalendario(mes, ano) {
+      const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+      const primeiroDia = new Date(ano, mes, 1).getDay();
+      const ultimoDia = new Date(ano, mes + 1, 0).getDate();
+
+      let html = '<table><thead><tr>';
+      for (let dia of diasSemana) html += `<th>${dia}</th>`;
+      html += '</tr></thead><tbody><tr>';
+
+      for (let i = 0; i < primeiroDia; i++) html += '<td></td>';
+      for (let dia = 1; dia <= ultimoDia; dia++) {
+        const hoje = new Date();
+        const ehHoje = dia === hoje.getDate() && mes === hoje.getMonth() && ano === hoje.getFullYear();
+        html += `<td class="${ehHoje ? 'dia-atual' : ''}">${dia}</td>`;
+        if ((dia + primeiroDia) % 7 === 0) html += '</tr><tr>';
+      }
+
+      html += '</tr></tbody></table>';
+      return html;
+    }
+
+    // Mostra data atual formatada
+    function mostrarDataAtual() {
+      const dias = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+      const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+        'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+      const hoje = new Date();
+      const diaSemana = dias[hoje.getDay()];
+      const dia = hoje.getDate();
+      const mes = meses[hoje.getMonth()];
+      const ano = hoje.getFullYear();
+
+      document.getElementById('dataAtual').textContent = `Hoje, ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+    }
+
+    // Gera lista de horários
+    function gerarHorarios() {
+      const container = document.getElementById('listaHorarios');
+      for (let hora = 14; hora <= 22; hora++) {
+        const horario = `${hora.toString().padStart(2, '0')}:00`;
+        const div = document.createElement('div');
+        div.className = 'hora';
+        div.textContent = horario;
+        div.onclick = () => {
+          div.classList.toggle('agendado');
+        };
+        container.appendChild(div);
+      }
+    }
+
+    // Inicializa tudo
+    window.onload = () => {
+      const hoje = new Date();
+      document.getElementById('calendar').innerHTML = gerarCalendario(hoje.getMonth(), hoje.getFullYear());
+      mostrarDataAtual();
+      gerarHorarios();
+    };
+  </script>
+</body>
+</html>
